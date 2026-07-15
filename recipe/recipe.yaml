@@ -1,41 +1,41 @@
 context:
-  version: 0.7.2
+  version: "0.7.3"
 
 package:
   name: doclang
   version: ${{ version }}
 
 source:
-- url: https://pypi.org/packages/source/d/doclang/doclang-${{ version }}.tar.gz
-  sha256: 89c17a168ef9443c2f814284bae3ea3dbf2f1910e79d4fd6cbdde04aa7c06d40
+  - url: https://pypi.org/packages/source/d/doclang/doclang-${{ version }}.tar.gz
+    sha256: ca50615357e46ebf9597bb9065b9112367103ec24bd539f8ae12649224cf50b0
 
 build:
   number: 0
   script: ${{ PYTHON }} -m pip install .
   python:
     entry_points:
-    - doclang = doclang.cli:app
+      - doclang = doclang.cli:app
   noarch: python
 
 requirements:
   host:
-  - python ${{ python_min }}.*
-  - setuptools >=80
-  - pip
+    - python ${{ python_min }}.*
+    - setuptools >=80
+    - pip
   run:
-  - python >=${{ python_min }}
-  - lxml >=4.8.0
-  - typer >=0.15.1
+    - python >=${{ python_min }}
+    - lxml >=4.8.0
+    - typer >=0.15.1
   # - saxonche >=12.9.0 # extra == "schematron-saxon"
 
 tests:
-- python:
-    imports:
-    - doclang
-    pip_check: true
-    python_version: ${{ python_min }}.*
-- script:
-  - doclang --help
+  - python:
+      imports:
+        - doclang
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - script:
+      - doclang --help
 
 about:
   summary: DocLang reference toolkit
@@ -117,10 +117,10 @@ about:
     DocLang is licensed under the Apache License 2.0. See [LICENSE](https://github.com/doclang-project/doclang/blob/main/LICENSE) for details.
   license: Apache-2.0
   license_file:
-  - LICENSE
+    - LICENSE
   homepage: https://www.doclang.ai/
   documentation: https://github.com/doclang-project/doclang/blob/main/README.md
 
 extra:
   recipe-maintainers:
-  - kklein
+    - kklein
