@@ -1,5 +1,5 @@
 context:
-  version: "0.9.0"
+  version: "0.10.0"
 
 package:
   name: doclang
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/d/doclang/doclang-${{ version }}.tar.gz
-    sha256: 732c1d8b9e14945836df6bf8ae16e8d4603d77fc160363ce2c5e2aeb3ec4d9cf
+    sha256: 1cf556be834010cf036185d76aa17678cb40de366ae34ec8d9b589f7dbed3bd7
 
 build:
   number: 0
